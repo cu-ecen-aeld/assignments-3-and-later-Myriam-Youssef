@@ -2,13 +2,13 @@
 set -e
 set -u
 
-writefile=$1
-writestr=$2
-
 if [ "$#" -ne 2 ];then
 
 echo "Please specify the correct arguments"
 exit 1;
+else 
+writefile=$1
+writestr=$2
 
 fi
 

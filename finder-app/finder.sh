@@ -1,4 +1,7 @@
 #!/bin/sh
+set -e
+set -u 
+
 filesdir=$1
 searchstr=$2
 x= 
