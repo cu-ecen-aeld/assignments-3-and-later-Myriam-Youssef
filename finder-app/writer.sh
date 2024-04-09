@@ -1,4 +1,6 @@
 #!/bin/sh
+set -e
+set -u
 
 writefile=$1
 writestr=$2
@@ -10,6 +12,7 @@ exit 1;
 
 fi
 
+mkdir -p "$(dirname "${writefile}")"
 touch "${writefile}"
 
 if ! [ -f "${writefile}" ];then
