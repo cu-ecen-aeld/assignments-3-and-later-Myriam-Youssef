@@ -47,15 +47,22 @@ then
 	else
 		exit 1
 	fi
+
+	echo "Removing the old writer utility and compiling as a native application"
+	make clean
+    make
+	#sudo chmod 777 writer.c 
 fi
 #echo "Removing the old writer utility and compiling as a native application"
 #make clean
 #make
-
-for i in $( seq 1 $NUMFILES)
-do
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
-done
+if [ $assignment != 'assignment1' ]
+then
+	for i in $( seq 1 $NUMFILES)
+	do
+		./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	done
+fi
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
 
@@ -71,3 +78,6 @@ else
 	echo "failed: expected  ${MATCHSTR} in ${OUTPUTSTRING} but instead found"
 	exit 1
 fi
+
+The number of files are 10 and the number of matching lines are 10 in 
+The number of files are 10 and the number of matching lines are 10
