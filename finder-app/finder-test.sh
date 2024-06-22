@@ -47,11 +47,6 @@ then
 	else
 		exit 1
 	fi
-
-	echo "Removing the old writer utility and compiling as a native application"
-	make clean
-    make
-	#sudo chmod 777 writer.c 
 fi
 #echo "Removing the old writer utility and compiling as a native application"
 #make clean
